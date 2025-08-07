@@ -1,9 +1,9 @@
 # 🧛 VamSurvialLike_Game(2D 로그라이크 서바이벌 게임)
 
-## 📖 소개 (Introduction)
+## 소개 (Introduction)
 이 프로젝트는 Unity로 개발된 2D 탑뷰 로그라이크 서바이벌 게임이다. 플레이어는 끊임없이 몰려오는 적들을 처치하며 제한 시간 동안 생존하는 것이 목표이다.
 
-## 🎮 주요 기능 (Features)
+## 주요 기능 (Features)
 * **캐릭터 시스템**
   * 4명의 플레이 가능한 캐릭터 (각기 다른 능력치 보유)
   * 이동 속도, 무기 속도, 데미지 등 고유 스탯 차별화
@@ -61,7 +61,7 @@
   * TextMeshPro 3.0.6
 * **개발 환경:** Visual Studio 2022
 
-## 🚀 설치 및 실행 방법 (Getting Started)
+## 설치 및 실행 방법 (Getting Started)
 
 ### 필요 조건 (Prerequisites)
 * Unity Hub (최신 버전)
@@ -88,7 +88,7 @@
    * Unity 에디터 상단의 Play 버튼 클릭
    * 또는 `File → Build and Run`으로 빌드 후 실행
 
-## 🎯 게임 플레이 방법 (How to Play)
+## 게임 플레이 방법 (How to Play)
 
 ### 키보드 조작법
 * **이동:** `W`, `A`, `S`, `D` 또는 화살표 키
@@ -136,7 +136,7 @@ Assets/
 
 ```
 
-## 🎨 주요 시스템 설명
+## 주요 시스템 설명
 
 ### 오브젝트 풀링 시스템
 * `EnemyPool.cs`를 통한 효율적인 적 관리
@@ -150,7 +150,7 @@ Assets/
 * ScriptableObject를 활용한 아이템 데이터 관리
 * 레벨별 데미지, 공격 횟수 등 세부 설정 가능
 
-## 💡 개발 팁
+## 개발 팁
 * 게임 난이도 조절: `GameManager.cs`의 `maxGameTime` 수정
 * 적 스폰 속도 조절: `EnemySpawner.cs`의 `SpawnData` 수정
 * 캐릭터 능력치 조절: `Character.cs`의 속성값 수정
