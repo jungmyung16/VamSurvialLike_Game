@@ -1,35 +1,41 @@
-# 🧛 VamSurvialLike_Game
+# 🧛 VamSurvialLike_Game(2D 로그라이크 서바이벌 게임)
 
-## 소개 (Introduction)
-이 프로젝트는 뱀파이어 서바이벌 장르에서 영감을 받은 2D 탑다운 서바이벌 게임이다. 플레이어는 끊임없이 몰려오는 적들을 물리치며 생존하는 것이 목표다.
+## 📖 소개 (Introduction)
+이 프로젝트는 Unity로 개발된 2D 탑뷰 로그라이크 서바이벌 게임이다. 플레이어는 끊임없이 몰려오는 적들을 처치하며 제한 시간 동안 생존하는 것이 목표이다.
 
-## 주요 기능 (Features)
-* **플레이어 캐릭터 시스템**
-  * 8방향 이동 (WASD/화살표 키)
-  * 다중 공격 액션 (Fire1, Fire2, Fire3)
-  * 점프 기능
+## 🎮 주요 기능 (Features)
+* **캐릭터 시스템**
+  * 4명의 플레이 가능한 캐릭터 (각기 다른 능력치 보유)
+  * 이동 속도, 무기 속도, 데미지 등 고유 스탯 차별화
+  
+* **전투 시스템**
+  * 근접 무기 (낫) - 플레이어 주변을 회전하며 적 공격
+  * 원거리 무기 (건) - 가장 가까운 적을 자동 조준하여 발사
+  * 자동 타겟팅 시스템 (Scanner를 통한 적 탐지)
+  
 * **적 AI 시스템**
-  * Enemy 태그 기반 적 관리
-  * Bullet 시스템을 통한 투사체 처리
-* **게임플레이 요소**
-  * Ground 및 Area 기반 레벨 디자인
-  * 6단계 그래픽 품질 설정 (Very Low ~ Ultra)
-* **카메라 시스템**
-  * Cinemachine을 활용한 부드러운 카메라 추적
-
-## 기술 스택 (Tech Stack)
-* **프로그래밍 언어:** C#
-* **게임 엔진:** Unity 2022.3.20f1
-* **렌더링 파이프라인:** Universal Render Pipeline (URP) 14.0.10
-* **주요 패키지:**
-  * Unity Input System 1.7.0
-  * Cinemachine 2.9.7
-  * TextMeshPro 3.0.6
-  * 2D Animation 9.1.0
-  * 2D Sprite & Tilemap
-* **개발 환경:** 
-  * Visual Studio 2022
-  * Rider 3.0.27
+  * 슬라임 타입의 적들이 플레이어를 추적
+  * 시간에 따라 난이도 상승 (스폰 속도, 체력, 이동 속도 증가)
+  * 넉백 시스템 구현
+  
+* **레벨업 및 아이템 시스템**
+  * 경험치 획득을 통한 레벨업
+  * 레벨업 시 3가지 랜덤 아이템 중 선택
+  * 무기 강화 및 새로운 능력 획득
+  
+* **게임 플로우**
+  * 타이틀 화면 → 캐릭터 선택 → 게임 플레이 → 결과 화면
+  * 제한 시간 생존 시 승리
+  * 체력 소진 시 게임 오버
+  
+* **UI/UX 시스템**
+  * 실시간 HUD (체력, 경험치, 레벨, 처치 수, 남은 시간)
+  * 레벨업 선택 창
+  * 게임 결과 화면
+  
+* **사운드 시스템**
+  * 배경 음악 및 효과음
+  * 타격, 레벨업, 승리/패배 등 상황별 사운드
 
 ## 스크린샷 및 작품설명
 |타이틀화면|인게임화면|레벨업 시 능력 선택창|게임종료 및 해금 알림창|
@@ -43,60 +49,108 @@
 - 스캐너를 개발해 플레이어 주변에 적용하여 가장 가까운 적에게 원거리 공격을 가한다.
 - 레벨업시 추가 능력을 업그레이드 할 수 있다.
 
-## 설치 및 실행 방법 (Getting Started)
+## 🛠 기술 스택 (Tech Stack)
+* **프로그래밍 언어:** C#
+* **게임 엔진:** Unity 2022.3.18f1 LTS
+* **렌더링 파이프라인:** Universal Render Pipeline (URP) 14.0.10
+* **주요 패키지:**
+  * Unity Input System 1.7.0
+  * Cinemachine 2.9.7 (카메라 제어)
+  * 2D Animation 9.1.0
+  * 2D Sprite 1.0.0
+  * TextMeshPro 3.0.6
+* **개발 환경:** Visual Studio 2022
+
+## 🚀 설치 및 실행 방법 (Getting Started)
 
 ### 필요 조건 (Prerequisites)
 * Unity Hub (최신 버전)
-* Unity 2022.3.20f1 LTS
-* Visual Studio 2022 또는 JetBrains Rider
+* Unity 2022.3.18f1 LTS
+* Visual Studio 2022 또는 Visual Studio Code
+* Git (선택사항)
 
 ### 빌드 및 실행 순서
-1. 저장소 클론
+1. **프로젝트 클론**
    ```bash
    git clone [레포지토리 주소]
    ```
-2. Unity Hub를 실행하고 "Add" 버튼을 클릭하여 클론한 프로젝트 폴더를 선택
-3. Unity 2022.3.20f1 버전으로 프로젝트 열기
-4. 프로젝트가 로드되면 `File > Build Settings`에서 플랫폼 선택 (Windows/Mac/Linux)
-5. "Build and Run" 클릭하여 빌드 및 실행
 
-## 게임 플레이 방법 (How to Play)
+2. **Unity Hub에서 프로젝트 열기**
+   * Unity Hub 실행
+   * "Add" 버튼 클릭
+   * 클론한 프로젝트 폴더 선택
+   * Unity 2022.3.18f1 버전으로 프로젝트 열기
+
+3. **씬 로드**
+   * `Assets/Scenes/SampleScene.unity` 씬 열기
+
+4. **실행**
+   * Unity 에디터 상단의 Play 버튼 클릭
+   * 또는 `File → Build and Run`으로 빌드 후 실행
+
+## 🎯 게임 플레이 방법 (How to Play)
 
 ### 키보드 조작법
 * **이동:** `W`, `A`, `S`, `D` 또는 화살표 키
-* **주 공격:** `Left Ctrl` 또는 `마우스 왼쪽 클릭`
-* **보조 공격:** `Left Alt` 또는 `마우스 오른쪽 클릭`
-* **특수 공격:** `Left Shift` 또는 `마우스 가운데 클릭`
-* **점프:** `Space`
-* **일시정지:** `Escape`
+* **자동 공격:** 무기가 자동으로 적을 공격
+* **레벨업 선택:** 마우스 클릭으로 아이템 선택
 
-### 게임패드 지원
-* 조이스틱으로 이동
-* 버튼 0, 1, 2로 각각 공격
-* 버튼 3으로 점프
+### 게임 목표
+* 제한 시간(20초) 동안 생존하기
+* 적을 처치하여 경험치 획득
+* 레벨업을 통해 강력한 무기와 능력 획득
+* 체력이 0이 되지 않도록 주의
 
-## 프로젝트 구조 (Project Structure)
+## 📂 프로젝트 구조 (Project Structure)
 ```
-Vam_Survial_Like/
-├── Assets/
-│   ├── Scenes/           # 게임 씬 파일 (SampleScene 포함)
-│   ├── Scripts/          # 게임 로직 C# 스크립트
-│   ├── Prefabs/          # 재사용 가능한 게임 오브젝트
-│   └── TextMesh_Pro/     # TMPro 폰트 및 설정
-├── Packages/             # Unity 패키지 설정
-│   ├── manifest.json     # 프로젝트 의존성 정의
-│   └── packages-lock.json
-└── ProjectSettings/      # Unity 프로젝트 설정
-    ├── InputManager.asset     # 입력 시스템 설정
-    ├── TagManager.asset       # 태그 및 레이어 설정
-    ├── QualitySettings.asset  # 그래픽 품질 프리셋
-    └── GraphicsSettings.asset # URP 렌더링 설정
+Assets/
+├── Scripts/              # 게임 로직 스크립트
+│   ├── GameManager.cs   # 게임 전체 관리 (싱글톤)
+│   ├── PlayerController.cs # 플레이어 이동 및 제어
+│   ├── Enemy.cs         # 적 AI 및 행동
+│   ├── EnemySpawner.cs  # 적 생성 관리
+│   ├── Weapon.cs        # 무기 시스템
+│   ├── Bullet.cs        # 총알 로직
+│   ├── Item.cs          # 아이템 시스템
+│   ├── Scanner.cs       # 적 탐지 시스템
+│   ├── AudioManager.cs  # 사운드 관리
+│   └── ...
+├── Prefabs/             # 재사용 가능한 게임 오브젝트
+│   ├── Player.prefab    # 플레이어 프리팹
+│   ├── Enemy.prefab     # 적 프리팹
+│   ├── Bullet0.prefab   # 낫 프리팹
+│   ├── Bullet1.prefab   # 총알 프리팹
+│   └── ...
+├── Animations/          # 애니메이션 파일
+│   ├── Player/          # 플레이어 애니메이션
+│   └── Enemy/           # 적 애니메이션
+├── Sprites/             # 2D 스프라이트 리소스
+├── Scriptable/          # ScriptableObject 아이템 데이터
+│   ├── Item0.asset      # 낫 데이터
+│   ├── Item1.asset      # 건 데이터
+│   └── ...
+├── Scenes/              # 게임 씬
+│   └── SampleScene.unity # 메인 게임 씬
+└── PlayerActions/       # Input System 액션 맵
+    └── Player.inputactions
+
 ```
 
-### 주요 시스템 구성
-* **Enemy Layer:** 적 캐릭터 충돌 처리용 레이어
-* **태그 시스템:**
-  * `Ground`: 지형 충돌 감지
-  * `Area`: 특정 구역 트리거
-  * `Enemy`: 적 캐릭터 식별
-  * `Bullet`: 투사체 관리
+## 🎨 주요 시스템 설명
+
+### 오브젝트 풀링 시스템
+* `EnemyPool.cs`를 통한 효율적인 적 관리
+* 총알과 적 오브젝트 재사용으로 성능 최적화
+
+### 캐릭터 능력치 시스템
+* `Character.cs`에서 캐릭터별 고유 능력치 관리
+* 플레이어 ID에 따른 스탯 차별화
+
+### 아이템 데이터 시스템
+* ScriptableObject를 활용한 아이템 데이터 관리
+* 레벨별 데미지, 공격 횟수 등 세부 설정 가능
+
+## 💡 개발 팁
+* 게임 난이도 조절: `GameManager.cs`의 `maxGameTime` 수정
+* 적 스폰 속도 조절: `EnemySpawner.cs`의 `SpawnData` 수정
+* 캐릭터 능력치 조절: `Character.cs`의 속성값 수정
